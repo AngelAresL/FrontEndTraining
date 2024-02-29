@@ -15,7 +15,7 @@ const UserForm = () => {
   const [statusMessage, setStatusMessage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [context] = useContext(authContext);
+  const [context, setContext] = useContext(authContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const UserForm = () => {
             headers: {
               Authorization: `Bearer ${context.token}`,
             },
-          },
+          }
         );
 
         if (response.ok) {
@@ -55,11 +55,15 @@ const UserForm = () => {
     e.preventDefault();
     if (dataDb.name === name && dataDb.email === email) {
       setStatusMessage("Debes cambiar algún dato");
+      setTimeout(() => {
+        setStatusMessage("");
+      }, 4000);
     } else {
       const validated = UseValidateUser(name, email, setStatusMessage);
 
       if (validated) {
         try {
+          setContext({ ...context, name });
           const formData = new FormData();
           formData.append("name", name);
           formData.append("email", email);
@@ -75,7 +79,7 @@ const UserForm = () => {
                 Authorization: `Bearer ${context.token}`,
               },
               body: formData,
-            },
+            }
           );
 
           if (res.ok) {

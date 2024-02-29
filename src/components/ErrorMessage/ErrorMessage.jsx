@@ -20,7 +20,7 @@ const ErrorMessage = ({ message }) => {
   return (
     <>
       {!message ? (
-        <p>Introduce los datos</p>
+        <p className="error-message">Introduce los datos</p>
       ) : (
         <p className={`status-message ${shake ? "shake" : ""}`}>
           {message && "⚠️ "}

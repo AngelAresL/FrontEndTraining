@@ -33,7 +33,7 @@ const AdminTrainingModify = () => {
             headers: {
               Authorization: `Bearer ${context.token}`,
             },
-          },
+          }
         );
 
         if (response.ok) {
@@ -66,13 +66,16 @@ const AdminTrainingModify = () => {
       dataDb.typology === typology
     ) {
       setStatusMessage("Debes cambiar algún dato");
+      setTimeout(() => {
+        setStatusMessage("");
+      }, 4000);
     } else {
       const validated = UseValidate(
         name,
         typology,
         description,
         muscular,
-        setStatusMessage,
+        setStatusMessage
       );
 
       if (validated) {
@@ -96,7 +99,7 @@ const AdminTrainingModify = () => {
                 Authorization: `Bearer ${context.token}`,
               },
               body: formData,
-            },
+            }
           );
 
           if (res.ok) {

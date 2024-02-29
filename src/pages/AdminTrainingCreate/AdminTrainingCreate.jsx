@@ -11,7 +11,6 @@ const AdminTrainingCreate = () => {
   const [description, setDescription] = useState("");
   const [typology, setTypology] = useState("");
   const [muscular, setMuscular] = useState("");
-  const [setShakeAnimation] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
   const [context] = useContext(authContext);
   const navigate = useNavigate();
@@ -23,7 +22,7 @@ const AdminTrainingCreate = () => {
       description,
       typology,
       muscular,
-      setStatusMessage,
+      setStatusMessage
     );
 
     if (validated) {
@@ -45,7 +44,7 @@ const AdminTrainingCreate = () => {
               Authorization: `Bearer ${context.token}`,
             },
             body: formData,
-          },
+          }
         );
 
         if (res.ok) {
@@ -69,17 +68,9 @@ const AdminTrainingCreate = () => {
           const body = await res.json();
           console.log(body);
           setStatusMessage(body.error);
-          setShakeAnimation(true);
-          setTimeout(() => {
-            setShakeAnimation(false);
-          }, 500);
         }
       } catch (error) {
         console.error(error);
-        setShakeAnimation(true);
-        setTimeout(() => {
-          setShakeAnimation(false);
-        }, 500);
       }
     }
   };

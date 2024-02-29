@@ -30,11 +30,17 @@ const RegisterPage = () => {
     if (validated) {
       if (password !== passwordRepeat) {
         setStatusMessage("Las contraseñas no coinciden");
+        setTimeout(() => {
+          setStatusMessage("");
+        }, 4000);
 
         return;
       }
       if (password.length < 6) {
         setStatusMessage("Contraseña debe tener al menos 6 caracteres");
+        setTimeout(() => {
+          setStatusMessage("");
+        }, 4000);
 
         return;
       }

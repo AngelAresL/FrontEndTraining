@@ -5,6 +5,9 @@
   border-radius: 5px;
 
   &.shake {
-    animation: shake 1s ease-in-out;
+    animation: shake 0.5s ease-in-out;
   }
+}
+.error-message {
+  margin: 1rem;
 }

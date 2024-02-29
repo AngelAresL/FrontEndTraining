@@ -3,28 +3,39 @@ const UseValidate = (
   typology,
   description,
   muscular,
-  setStatusMessage,
+  setStatusMessage
 ) => {
   if (name === "" || description === "" || muscular === "" || typology === "") {
-    setStatusMessage("Debes cubir todos los campos");
-    
+    setStatusMessage("Debes cubrir todos los campos");
+    setTimeout(() => {
+      setStatusMessage("");
+    }, 4000);
 
     return false;
   } else {
     if (name.length > 50) {
       setStatusMessage("El campo nombre tiene un máximo de 50 caracteres");
+      setTimeout(() => {
+        setStatusMessage("");
+      }, 4000);
 
       return false;
     }
     if (typology.length > 50) {
       setStatusMessage("El campo tipología tiene un máximo de 50 caracteres");
+      setTimeout(() => {
+        setStatusMessage("");
+      }, 4000);
 
       return false;
     }
     if (muscular.length > 50) {
       setStatusMessage(
-        "El campo grupo muscular tiene un máximo de 50 caracteres",
+        "El campo grupo muscular tiene un máximo de 50 caracteres"
       );
+      setTimeout(() => {
+        setStatusMessage("");
+      }, 4000);
 
       return false;
     }

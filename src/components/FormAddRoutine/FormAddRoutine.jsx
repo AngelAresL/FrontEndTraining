@@ -21,7 +21,10 @@ const FormAddRoutine = () => {
     e.preventDefault();
 
     if (name === "" || description === "") {
-      setStatusMessage("Todos los campos deben estar cubiertos ✌️");
+      setStatusMessage("Todos los campos deben estar cubiertos");
+      setTimeout(() => {
+        setStatusMessage("");
+      }, 4000);
     } else {
       const postBody = { name, description };
       mutation.mutate(
@@ -46,7 +49,7 @@ const FormAddRoutine = () => {
             });
             navigate(`${route}`);
           },
-        },
+        }
       );
     }
   };
