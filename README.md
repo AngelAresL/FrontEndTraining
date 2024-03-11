@@ -109,6 +109,18 @@ _Styles:_
   #3d3d3d
   #d2691e
 
+## Enlace directo al repositorio
+
+- https://github.com/luisvzq/FrontEndTraining
+
+## Video demo del proyecto
+
+- https://youtu.be/bPKmvWJxrPY
+
+## Poyecto desplegado
+
+- https://pulsefitworkout.vercel.app/
+
 ## Autores
 
 - Angel Ares https://www.linkedin.com/in/ángel-a-b05205286/
@@ -116,6 +128,3 @@ _Styles:_
 - Luis Diaz https://www.linkedin.com/in/luisdiazvazquez/
 - Patricia Lojo https://www.linkedin.com/in/patricia-lojo-zubeldia
 
-## Enlace directo al repositorio
-
-- https://github.com/luisvzq/FrontEndTraining
