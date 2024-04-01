@@ -117,7 +117,7 @@ _Styles:_
 
 - https://youtu.be/bPKmvWJxrPY
 
-## Poyecto desplegado
+## Proyecto desplegado
 
 - https://pulsefitworkout.vercel.app/
 
